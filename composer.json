@@ -25,6 +25,9 @@
         "sensio/generator-bundle": "~2.3"
     },
     "scripts": {
+        "pre-install-cmd": [
+          "AppBundle\\Composer\\HerokuEnvironment::populateEnvironment"
+        ],
         "post-root-package-install": [
             "SymfonyStandard\\Composer::hookRootPackageInstall"
         ],
