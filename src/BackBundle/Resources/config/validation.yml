@@ -1,0 +1,4 @@
+BackBundle\Resources\Entity\Page:
+    properties:
+        alias:
+            - NotBlank : ~
