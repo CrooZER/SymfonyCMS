@@ -1,0 +1,10 @@
+{
+  "name":"SymfonyCMS",
+  "scripts":{},
+  "env":{
+    "SYMFONY_ENV":{
+      "required":true
+    }
+  },
+  "addons":[]
+}
