@@ -1,0 +1,7 @@
+back_page:
+    resource: "@BackBundle/Resources/config/routing/page.yml"
+    prefix:   /page
+
+back_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BackBundle:Default:index }

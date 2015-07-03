@@ -1,0 +1,29 @@
+BackBundle\Entity\Page:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        alias:
+            type: string
+            length: 255
+        title:
+            type: string
+            length: 255
+        text:
+            type: text
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+        active:
+            type: boolean
+            nullable : true
+        archive:
+            type: boolean
+            nullable : true
+    lifecycleCallbacks: {  }
