@@ -2,6 +2,7 @@
 
 namespace BackBundle\Controller;
 
+use DateTime;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -40,6 +41,9 @@ class PageController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+
+            $entity->setCreatedAt(new \DateTime('now'));
+            $entity->setUpdatedAt(new \DateTime('now'));
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -161,9 +165,11 @@ class PageController extends Controller
 
         $entity = $em->getRepository('BackBundle:Page')->find($id);
 
+
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Page entity.');
         }
+        $entity->setUpdatedAt(new \DateTime('now'));
 
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);

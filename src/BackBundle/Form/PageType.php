@@ -18,8 +18,8 @@ class PageType extends AbstractType
             ->add('alias')
             ->add('title')
             ->add('text')
-            ->add('active' , 'checkbox', array('required' => 'false'))
-            ->add('archive', 'checkbox', array('required' => 'false'))
+            ->add('active' , 'checkbox', array('required' => 'false', 'mapped' => 'false'))
+            ->add('archive', 'checkbox', array('required' => 'false', 'mapped' => 'false'))
         ;
     }
     
