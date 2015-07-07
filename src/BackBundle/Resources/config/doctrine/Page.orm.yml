@@ -26,4 +26,5 @@ BackBundle\Entity\Page:
         archive:
             type: boolean
             nullable : true
+
     lifecycleCallbacks: {  }
