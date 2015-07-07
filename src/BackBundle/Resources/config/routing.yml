@@ -1,3 +1,11 @@
+back_services:
+    resource: "@BackBundle/Resources/config/routing/services.yml"
+    prefix:   /services
+
+back_category:
+    resource: "@BackBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+
 back_page:
     resource: "@BackBundle/Resources/config/routing/page.yml"
     prefix:   /page
