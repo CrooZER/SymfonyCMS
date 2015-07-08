@@ -2,7 +2,7 @@
 
 {% block body -%}
     <h1>Page edit</h1>
-
+    {{ form_errors(edit_form) }}
     {{ form(edit_form, {'attr' : {'novalidate' : 'novalidate'}}) }}
 
         <ul class="record_actions">

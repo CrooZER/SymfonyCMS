@@ -2,3 +2,7 @@ BackBundle\Resources\Entity\Page:
     properties:
         alias:
             - NotBlank : ~
+        title:
+            - NotBlank : ~
+        text:
+            - NotBlank : ~
