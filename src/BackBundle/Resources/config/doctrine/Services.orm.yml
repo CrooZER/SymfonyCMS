@@ -1,0 +1,28 @@
+BackBundle\Entity\Services:
+    type: entity
+    manyToOne:
+      category:
+        targetEntity: BackBundle\Entity\Category
+        inversedBy: services
+    table: null
+    repositoryClass: BackBundle\Entity\ServicesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            type: datetime
+            column: created_at
+        updatedAt:
+            type: datetime
+            column: updated_at
+        title:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

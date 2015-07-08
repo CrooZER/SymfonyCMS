@@ -1,0 +1,30 @@
+services:
+    path:     /
+    defaults: { _controller: "BackBundle:Services:index" }
+
+services_show:
+    path:     /{id}/show
+    defaults: { _controller: "BackBundle:Services:show" }
+
+services_new:
+    path:     /new
+    defaults: { _controller: "BackBundle:Services:new" }
+
+services_create:
+    path:     /create
+    defaults: { _controller: "BackBundle:Services:create" }
+    methods:  POST
+
+services_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BackBundle:Services:edit" }
+
+services_update:
+    path:     /{id}/update
+    defaults: { _controller: "BackBundle:Services:update" }
+    methods:  [POST, PUT]
+
+services_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BackBundle:Services:delete" }
+    methods:  [POST, DELETE]
