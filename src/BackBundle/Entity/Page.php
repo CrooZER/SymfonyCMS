@@ -2,14 +2,23 @@
 
 namespace BackBundle\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Translatable\Translatable;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Page
  */
 class Page implements Translatable
 {
+
+    /*
+     * @var string
+     * @Gedmo\Locale
+     */
+
+    private $locale;
     /**
      * @var integer
      */
@@ -22,11 +31,13 @@ class Page implements Translatable
 
     /**
      * @var string
+     * @Gedmo\Translatable
      */
     private $title;
 
     /**
      * @var string
+     * @Gedmo\Translatable
      */
     private $text;
 
@@ -50,6 +61,11 @@ class Page implements Translatable
      */
     private $archive;
 
+
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
+    }
 
     /**
      * Get id

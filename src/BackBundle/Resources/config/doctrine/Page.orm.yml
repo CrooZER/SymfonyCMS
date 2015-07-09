@@ -3,9 +3,7 @@ BackBundle\Entity\Page:
     table: null
     gedmo:
         translation:
-          locale: title
-    # using specific personal translation class:
-    #     entity: Translatable\Fixture\CategoryTranslation
+          locale: locale
     id:
         id:
             type: integer
