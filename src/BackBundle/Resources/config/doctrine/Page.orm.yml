@@ -1,6 +1,11 @@
 BackBundle\Entity\Page:
     type: entity
     table: null
+    gedmo:
+        translation:
+          locale: title
+    # using specific personal translation class:
+    #     entity: Translatable\Fixture\CategoryTranslation
     id:
         id:
             type: integer
@@ -14,8 +19,12 @@ BackBundle\Entity\Page:
         title:
             type: string
             length: 255
+            gedmo:
+                - translatable
         text:
             type: text
+            gedmo:
+                - translatable
         createdAt:
             type: datetime
         updatedAt:

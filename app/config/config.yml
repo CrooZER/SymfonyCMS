@@ -1,6 +1,7 @@
 imports:
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: doctrine_extensions.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -70,6 +71,14 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+        mappings:
+            translatable:
+                  type: annotation
+                  alias: Gedmo
+                  prefix: Gedmo\Translatable\Entity
+                  # make sure vendor library location is correct
+                  dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -77,3 +86,10 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+a2lix_translation_form:
+    locale_provider: default       # [1]
+    locales: [en, ua]          # [1-a]
+    default_locale: en             # [1-b]
+    required_locales: [ua]         # [1-c]
+    manager_registry: doctrine      # [2]
+    templating: "A2lixTranslationFormBundle::default.html.twig"

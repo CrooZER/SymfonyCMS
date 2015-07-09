@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use BackBundle\Entity\Page;
 use BackBundle\Form\PageType;
+use AppBundle\Listener\DoctrineExtensionListener;
 
 /**
  * Page controller.

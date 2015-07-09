@@ -17,9 +17,28 @@ class PageType extends AbstractType
         $builder
             ->add('alias','text')
             ->add('title')
+            ->add('title', 'a2lix_translations')
             ->add('text','textarea',['attr' => ['class'=>'tinymce']])
             ->add('active' , 'checkbox', array('required' => 'false', 'mapped' => 'false'))
-            ->add('archive', 'checkbox', array('required' => 'false', 'mapped' => 'false'))
+            ->add('archive', 'checkbox', array('required' => 'false', 'mapped' => 'false'));
+        $builder->add('translations', 'a2lix_translations', array(
+            'locales' => array('fr', 'es', 'de'),   // [1]
+            'required_locales' => array('fr'),      // [2]
+            'fields' => array(                      // [3]
+                'title' => array(                   // [3.a]
+                    'field_type' => 'textarea',                 // [4]
+                    'label' => 'descript.',                     // [4]
+                    'locale_options' => array(            // [3.b]
+                        'es' => array(
+                            'label' => 'descripción'            // [4]
+                        ),
+                        'fr' => array(
+                            'display' => false                  // [4]
+                        )
+                    )
+                )
+            )
+        ));
         ;
     }
     

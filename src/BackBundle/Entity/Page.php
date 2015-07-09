@@ -3,11 +3,12 @@
 namespace BackBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Translatable\Translatable;
 
 /**
  * Page
  */
-class Page
+class Page implements Translatable
 {
     /**
      * @var integer
