@@ -142,4 +142,27 @@ class Services
 
 
     protected $category;
+
+    /**
+     * Set category
+     *
+     * @param \BackBundle\Entity\Category $category
+     * @return Services
+     */
+    public function setCategory(\BackBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \BackBundle\Entity\Category 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
 }

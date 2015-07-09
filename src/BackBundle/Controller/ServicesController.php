@@ -40,6 +40,10 @@ class ServicesController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+
+            $entity->setCreatedAt(new \DateTime('now'));
+            $entity->setUpdatedAt(new \DateTime('now'));
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -164,6 +168,8 @@ class ServicesController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Services entity.');
         }
+
+        $entity->setUpdatedAt(new \DateTime('now'));
 
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);

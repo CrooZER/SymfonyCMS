@@ -15,11 +15,12 @@ class ServicesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('createdAt')
-            ->add('updatedAt')
             ->add('title')
             ->add('description')
-            ->add('category')
+            ->add('category', 'entity',
+                    array('class' => 'BackBundle:Category',
+                          'property' => 'title'
+                    ))
         ;
     }
     
