@@ -17,22 +17,15 @@ class PageType extends AbstractType
     {
         $builder
             ->add('alias','text')
-            ->add('title', 'a2lix_translations', array(
+            /*->add('object', 'a2lix_translations', array(
                 'locales' => array('en', 'ua'),   // [1]
                 'required_locales' => array('en'),      // [2]
                 'fields' => array(                      // [3]
                     'title' => array(                   // [3.a]
                         'field_type' => 'text',                 // [4]
                         'label' => 'descript.',                     // [4]
-                        'locale_options' => array(            // [3.b]
-                            'es' => array(
-                                'label' => 'descripción'            // [4]
-                            ),
-                            'fr' => array(
-                                'display' => false                  // [4]
-                            )
                         )
-                    ),
+                    ,
                     'text' => array(
                         'field_type' => 'textarea',
                         'attr' => [
@@ -40,7 +33,9 @@ class PageType extends AbstractType
                         ]
                     )
                 )
-            ))
+            ))*/
+            ->add('title','text')
+            ->add('text','textarea')
 
 
             ->add('active' , 'checkbox', array('required' => 'false', 'mapped' => 'false'))

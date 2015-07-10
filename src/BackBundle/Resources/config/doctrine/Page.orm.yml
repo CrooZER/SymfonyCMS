@@ -1,9 +1,9 @@
 BackBundle\Entity\Page:
     type: entity
-    table: null
+    table: page
     gedmo:
         translation:
-          locale: locale
+        locale: locale
     id:
         id:
             type: integer
@@ -14,6 +14,7 @@ BackBundle\Entity\Page:
         alias:
             type: string
             length: 255
+            unique : true
         title:
             type: string
             length: 255

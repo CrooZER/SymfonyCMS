@@ -20,14 +20,20 @@ class PageController extends Controller
      * Lists all Page entities.
      *
      */
-    public function indexAction()
+    public function indexAction($page=1)
     {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('BackBundle:Page')->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $pages = $paginator->paginate(
+            $entities,
+            $page/*page number*/,
+            2/*limit per page*/
+        );
 
         return $this->render('BackBundle:Page:index.html.twig', array(
-            'entities' => $entities,
+            'entities' => $pages,
         ));
     }
     /**
@@ -37,10 +43,13 @@ class PageController extends Controller
     public function createAction(Request $request)
     {
         $entity = new Page();
+
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+
         if ($form->isValid()) {
+
 
             $entity->setCreatedAt(new \DateTime('now'));
             $entity->setUpdatedAt(new \DateTime('now'));

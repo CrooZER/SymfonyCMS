@@ -4,13 +4,16 @@ namespace BackBundle\Entity;
 
 
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Translatable\Translatable;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Translatable\Translatable;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * Page
+ * Class Page
+ *  @UniqueEntity(fields="alias", message="Sorry, this alias is already in use.")
+ *
  */
-class Page implements Translatable
+class Page
 {
 
     /*
@@ -30,14 +33,15 @@ class Page implements Translatable
     private $alias;
 
     /**
-     * @var string
      * @Gedmo\Translatable
+     * @var string
+     *
      */
     private $title;
 
     /**
      * @var string
-     * @Gedmo\Translatable
+     *
      */
     private $text;
 
@@ -62,6 +66,11 @@ class Page implements Translatable
     private $archive;
 
 
+    /**
+     * Sets translatable locale
+     *
+     * @param string $locale
+     */
     public function setTranslatableLocale($locale)
     {
         $this->locale = $locale;
