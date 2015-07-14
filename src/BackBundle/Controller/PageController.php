@@ -29,7 +29,7 @@ class PageController extends Controller
         $pages = $paginator->paginate(
             $entities,
             $page/*page number*/,
-            2/*limit per page*/
+            10/*limit per page*/
         );
 
         return $this->render('BackBundle:Page:index.html.twig', array(
