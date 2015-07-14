@@ -2,6 +2,7 @@ page:
     path:     /
     defaults: { _controller: "BackBundle:Page:index" }
 
+
 page_show:
     path:     /{id}/show
     defaults: { _controller: "BackBundle:Page:show" }
